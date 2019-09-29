@@ -2,41 +2,138 @@
 <html lang="en">
 
 <head>
-  <title>Bootstrap Website Example</title>
+  <title>LogIn</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-  
+
 </head>
 
 <body>
-  
+
   <div class="jumbotron text-center" style="margin-bottom:0">
-      <h1><b>Bet & Sweat</b></h1>
-      <p>Make your move!</p>
-        <div class="navBar">
-          <a href="./home.html">Home</a> |<a href="./login.html">  Log In</a> |<a href="./view.html">  Bet Here</a>
-        </div>
-      
+    <h1><b>Bet & Sweat</b></h1>
+    <p>Register With Us!</p>
+    <div class="navBar">
+      <a href="./home.html">Home</a> |<a href="./login.html"> Log In</a> |<a href="./view.html"> Bet Here</a>
     </div>
+  </div><br>
+  <br>
+  <div class="container">
+    <div class="imgcontainer">
+      <img src="https://p7.hiclipart.com/preview/719/903/650/avatar-computer-icons-avatar-icon.jpg" alt="Avatar"
+        class="avatar"><br>
+      <br>
+    </div>
+    <label for="uname" class="username">Username</label><br>
+    <input type="text" placeholder="Enter Username" name="uname" required class="nameholder"><br>
+    <br>
+    <label for="psw" class="password"><b>Password</b></label><br>
+    <input type="password" placeholder="Enter Password" name="psw" required class="passholder"><br>
+    <br>
+    <button type="submit" class="submit"><b>Login</b></button>
+  </div>
 
+  <div class="container2">
+    <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+    <span class="psw">Forgot <a href="#">Password?</a></span>
+  </div>
+
+  <div class="container3">
+    <button type="cancel" class="cancel"><b>Cancel</b></button><br>
+    <br>
+  </div>
   <style>
-.navBar {
-  height: auto;
-  width: auto;
-  float: right;
-  font-size: 20px;
-  margin-right: 10px;
-  margin-top: 20px;
-  font-family: cursive;
-}
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+      text-align: center;
+    }
 
-.jumbotron {
-  background-color: rgba(0, 0, 0, 0.13);
-}
+    .imgcontainer {
+      text-align: center;
+    }
+
+    .psw {
+      float: right;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    .container {
+      font-size: 20px;
+
+      padding-bottom: 0px;
+    }
+
+    .container2 {
+      font-size: 20px;
+      padding: 35px;
+    }
+
+    .container3 {
+
+      font-size: 20px;
+      padding: 35px;
+    }
+
+    .navBar {
+      height: auto;
+      width: auto;
+      float: right;
+      font-size: 20px;
+      margin-right: 10px;
+      margin-top: 20px;
+      font-family: cursive;
+    }
+
+    .jumbotron {
+      background-color: rgba(0, 0, 0, 0.13);
+    }
+
+    .username,
+    .password {
+      font-size: 20px;
+    }
+
+    .nameholder,
+    .passholder {
+      font-size: 20px;
+    }
+
+    .nameholder,
+    .passholder {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .submit {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .cancel {
+      background-color: red;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 20%;
+    }
   </style>
 
 </body>
