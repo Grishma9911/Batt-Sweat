@@ -1,4 +1,4 @@
-# Bet-Sweat
+# Bet&Sweat
 
 ## Overview
 
