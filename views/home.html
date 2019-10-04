@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
 
-
+  <!-- <script src="../public/js/ajax.js"></script> -->
 </head>
 
 <body>
@@ -19,6 +21,7 @@
     <p>Make your move!</p>
     <div class="navBar">
       <a href="./home.html">Home</a> |<a href="./login.html"> Log In</a> |<a href="./view.html"> Bet Here</a>
+      | <a href="/index">Deposit Cash</a>
     </div>
 
   </div>
@@ -40,8 +43,61 @@
     }
   </style>
 
+
+  <div class="container">
+    <div class="weeklyGames">
+      <p> Here's this weeks action</p>
+      <p class="aT-Main">Away teams: </p>
+      <br>
+      <p class="hT-Main">Home teams: </p>
+    </div>
+  </div>
+
+
+
+
+  <br>
+
+
+
+
+  <!-- ---this displays the top 3 picked games for the week -->
+  <div class="container">
+    <div class="display">
+      <p><strong>Check out this weeks top 3 games to watch!</strong></p>
+      <br>
+      <button type="submit" value="submit" onclick="getData() + weeklyGames()"> Search</button>
+
+      <div class="date1">The game be played on :</div>
+      <div class="awayTeam1">The away team for this game is :</div>
+      <div class="homeTeam1">The home team for this game is :</div>
+      <div class="pointSpread1">The point spread for this game is :</div>
+      <div class="overUnder1">The over under for this game is :</div>
+      <div class="forecastDescription1">The predicted weather forecast for this game is :</div>
+
+      <br>
+
+      <div class="date2">The game be played on :</div>
+      <div class="awayTeam2">The away team for this game is :</div>
+      <div class="homeTeam2">The home team for this game is :</div>
+      <div class="pointSpread2">The point spread for this game is :</div>
+      <div class="overUnder2">The over under for this game is :</div>
+      <div class="forecastDescription2">The predicted weather forecast for this game is :</div>
+
+      <br>
+
+      <div class="date3">The game be played on :</div>
+      <div class="awayTeam3">The away team for this game is :</div>
+      <div class="homeTeam3">The home team for this game is :</div>
+      <div class="pointSpread3">The point spread for this game is :</div>
+      <div class="overUnder3">The over under for this game is :</div>
+      <div class="forecastDescription3">The predicted weather forecast for this game is :</div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script src="./public/js/ajax.js"></script>
 </body>
 
 </html>
-
-</body>

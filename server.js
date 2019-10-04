@@ -1,47 +1,55 @@
-require("dotenv").config();
-var express = require("express");
-var exphbs = require("express-handlebars");
+const express = require("express");
+// var db = require("./models");
 
-var db = require("./models");
+const app = express();
+const PORT = process.env.PORT || 3000;
+const path = require("path");
 
-var app = express();
-var PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(express.static("public"));
+require('dotenv').config()
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
+const keyPublishable = process.env.PUBLISHABLE_KEY;
+const keySecret = process.env.SECRET_KEY;
+
+
+const stripe = require("stripe")(keySecret);
+
+app.set("view engine", "ejs");
+app.use(require("body-parser").urlencoded({extended: false}));
+app.use(express.static("views"));
+
+app.get("/", (req, res) =>
+  res.render("index", {keyPublishable}));
+
+
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "/../Bet-Sweat/views/home.html"));
+});
+
+
+app.post("/charge", (req, res) => {
+  let amount = 500;
+//creates new stripe customer 
+  stripe.customers.create({
+     email: req.body.stripeEmail,
+    source: req.body.stripeToken
   })
-);
-app.set("view engine", "handlebars");
+  .then(customer =>
+    stripe.charges.create({
+      amount,
+      description: "Sample Charge",
+         currency: "usd",
+         customer: customer.id
+    }))
+  .then(charge => res.render("charge"));
+});
+
 
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-var syncOptions = { force: false };
 
-// If running a test, set syncOptions.force to true
-// clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
-  syncOptions.force = true;
-}
 
-// Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
-});
-
-module.exports = app;
+// module.exports = app;
+app.listen(3000, () => console.log("Server is running on"+" "+ PORT));

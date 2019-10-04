@@ -24,4 +24,9 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+  app.get("/index", function(req, res) {
+    console.log("Hello World")
+    res.render("index.ejs",{keyPublishable});
+  }); 
 };
