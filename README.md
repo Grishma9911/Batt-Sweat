@@ -2,4 +2,4 @@
 
 ## Overview
 
-  * Creating a website for football betting. Where you can bet for several team for football. After selecting team we will give a specific amount to bet and that will show us the profit for this bet. after selecting betting amount and profit, we will log in to our account to confirm all payment and however it shows us weather we win or lose. And BOOM.....!!!!!!!!
+  *  This project seeks to create a website that serves as an innovative football betting platform. After logging into a user account, the user can place a bet on a specific sports team. This betting functionally is acheived through the third party payment processor, Stripe. Functionality is included so that the end user can save their favorite teams in their account for betting ease. 
