@@ -24,10 +24,10 @@
   </div>
   <br>
   <div class="container">
-    <div class="row">
+     <div class="row">
       <input type="image" class="img"
         src="https://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fncaa%2F500%2F333.png" width="70px" ;
-        height="70px;"></a>
+        height="70px;">
       <p class="submit"><b>Amount to bet: </b></p>
       <input type="text" name="Amount" placeholder="Enter your amount...."><a href="index.ejs"><button type="submit"
           class="submit"><b>Submit</b></button></a>
@@ -79,7 +79,7 @@
     </div>
     <br>
     <div class="row">
-      <input type="image" class="img"
+      <input type="image" class="img img-responsive"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlL3vvXpH6Bi0hE71lAn5wLLfMr1bwUBGmffbVpBUPJrEis3Ze"
         width="70px" ; height="70px;"></a>
       <p class="submit"><b>Amount to bet: </b></p>
@@ -136,9 +136,25 @@
       font-family: cursive;
     }
 
-    .jumbotron {
+    /* .jumbotron {
       background-color: rgba(0, 0, 0, 0.13);
-    }
+    } */
+
+    .jumbotron {
+  -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+  animation: mymove 5s infinite;
+  font-family: times, serif; font-size:14pt; font-style:italic; 
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+  50% {text-shadow: 10px 20px 30px lightseagreen;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+  50% {text-shadow: 10px 20px 30px lightseagreen;}
+}
 
     .img {
       padding: 5px;
@@ -155,23 +171,37 @@
       width: 400px;
       margin-left: -10px;
       float: left;
+      background-color: rgba(59, 133, 182, 0.212);
+      margin: 10px;
+      border-radius: 15px;
     }
 
     .container {
       float: left;
       width: 400px;
     }
-/* 
+
     body {
-      background-image: url(https://logodix.com/logo/740220.png);
-      background-repeat: no-repeat repeat-x;
+      /* background-image: url(https://images.cdn1.stockunlimited.net/preview1300/abstract-soccer-player-design_1818055.jpg); */
+
+      backdrop-filter: initial;
     }
 
- background-image {
-      opacity: 6;
-      filter: alpha(opacity=50);
+    body::after {
+      background: url(https://images.cdn1.stockunlimited.net/preview1300/abstract-soccer-player-design_1818055.jpg);
+      content: "";
+      opacity: 0.2;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      width: auto;
+      height: 100%;
       background-repeat: no-repeat;
-    } */
+    }
+
   </style>
 
 </body>
