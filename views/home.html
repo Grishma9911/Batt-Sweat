@@ -158,6 +158,28 @@
   </script>
 
   <style>
+
+body {
+      /* background-image: url(https://images.cdn1.stockunlimited.net/preview1300/abstract-soccer-player-design_1818055.jpg); */
+
+      backdrop-filter: initial;
+    }
+
+    body::after {
+      background: url(https://news.wagertalk.com/wp-content/uploads/2019/01/new-england-patriots-background.jpg);
+      content: "";
+      opacity: 0.2;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      width: auto;
+      height: 100%;
+      background-repeat: no-repeat;
+    }
+
     .wrapper {
       margin: auto;
     }
@@ -299,7 +321,7 @@
     }
 
     /* Change styles for span and cancel button on extra small screens */
-    @media screen and (max-width: 300px) {
+    @media screen and (max-width: 1000px) {
       span.psw {
         display: block;
         float: none;
@@ -320,7 +342,7 @@
     }
     
     #card.container {
-      width: 500px;
+      width: 700px;
       margin: auto;
       padding: 50px;
           }
@@ -383,10 +405,10 @@
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       text-align: center;
-      min-height: 400px;
-      min-width: 400px;
-      width: 400px;
-      height: 400px;
+      min-height: 300px;
+      min-width: 300px;
+      width: 300px;
+      height: 300px;
       border-radius: 10px;
       color: #fff;
       font-size: 2rem;
@@ -398,8 +420,8 @@
       background: -webkit-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
       background: -o-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
       background: linear-gradient(45deg, #cedce7 0%, #596a72 100%);
-      width: 400px;
-      height: 400px;
+      width: 300px;
+      height: 300px;
     }
 
     .front:after {
@@ -432,8 +454,8 @@
       top: 0;
       left: 0;
       width: 100%;
-      width: 400px;
-      height: 400px;
+      width: 300px;
+      height:300px;
       float: right;
     }
 
