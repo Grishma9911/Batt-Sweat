@@ -1,5 +1,5 @@
 const express = require("express");
-// var db = require("./models");
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -46,8 +46,8 @@ app.post("/charge", (req, res) => {
 
 
 // Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+
+
 
 
 
