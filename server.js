@@ -57,7 +57,7 @@ app.get("*", function(req, res) {
 });
 
 
-app.post("/home", (req, res) => {
+app.post("/charge", (req, res) => {
   let amount = 500;
 //creates new stripe customer 
   stripe.customers.create({
@@ -70,8 +70,8 @@ app.post("/home", (req, res) => {
       description: "Sample Charge",
          currency: "usd",
          customer: customer.id
-    }))
-  .then( res.redirect("./views/home"));
+    }));res.sendFile(path.join(__dirname, "/../Bet-Sweat/views/home.html"));
+  
 });
 
 

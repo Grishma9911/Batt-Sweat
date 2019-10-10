@@ -2,13 +2,13 @@
 var mysql = require("mysql");
 const util= require('util');
 const express = require('express');
-const app = express;
+const app = express();
 
 
 
 var connection = mysql.createPool({
   host: "localhost",
-  port: 3000,
+  port: 3306,
   user: "root",
   password: "25Million",
   database: "login_db"
@@ -21,7 +21,7 @@ connection.getConnection((err, connection) =>{
     
     if (connection)
         console.log('connected to database')
-        connection.release();
+        // connection.release();
         return;
 })
 
