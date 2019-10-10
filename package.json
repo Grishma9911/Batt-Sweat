@@ -16,7 +16,8 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "fantasydata-node-client": "^1.2.1",
-    "stripe": "^7.10.0"
+    "stripe": "^7.10.0",
+    "util.promisify": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",

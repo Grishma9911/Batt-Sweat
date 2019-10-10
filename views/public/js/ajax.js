@@ -4,9 +4,9 @@ function getData() {
 
     //queryURL provides the teams information that will be displayed on the home.html page
     $.ajax({
-            url: queryURL,
-            method: "GET",
-        })
+        url: queryURL,
+        method: "GET",
+    })
         .then(function (response) {
 
 
@@ -80,9 +80,9 @@ function weeklyGames() {
     var queryURL = "https://api.sportsdata.io/v3/nfl/scores/json/Schedules/2019?key=ade33bf6779d4808bf49fef0e77ebe7e"
 
     $.ajax({
-            url: queryURL,
-            method: "GET",
-        })
+        url: queryURL,
+        method: "GET",
+    })
         .then(function (response) {
             console.log("Away Team: " + response[67].AwayTeam, response[68].AwayTeam, response[69].AwayTeam, response[70].AwayTeam, response[71].AwayTeam, response[72].AwayTeam, response[73].AwayTeam, response[74].AwayTeam, response[75].AwayTeam, response[76].AwayTeam, response[77].AwayTeam, response[78].AwayTeam, response[79].AwayTeam);
 
