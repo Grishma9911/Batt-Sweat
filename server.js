@@ -1,9 +1,8 @@
-const express = require("express");
-// var db = require("./models");
-
+const express = require('express');
+const session = require('express-session');
+const path = require('path');
+const pageRouter = require('./routes/pages');
 const app = express();
-const PORT = process.env.PORT || 3000;
-const path = require("path");
 
 
 require('dotenv').config()
@@ -14,10 +13,41 @@ const keySecret = process.env.SECRET_KEY;
 
 const stripe = require("stripe")(keySecret);
 
-app.set("view engine", "ejs");
-app.use(require("body-parser").urlencoded({extended: false}));
-app.use(express.static("views"));
 
+
+
+
+
+
+// for body parser. to collect data that sent from the client.
+app.use(require("body-parser").urlencoded({extended: false}));
+
+
+// Serve static files. CSS, Images, JS files ... etc
+app.use(express.static(path.join(__dirname, 'views')));
+
+
+// Template engine. PUG
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// session
+app.use(session({
+    secret:'Bet-Sweat',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 60 * 1000 * 30
+    }
+}));
+
+
+//------------------------------------------------- Routers
+
+app.use('/', pageRouter );
+
+
+//---------------------------------STRIPE
 app.get("/", (req, res) =>
   res.render("index", {keyPublishable}));
 
@@ -40,16 +70,48 @@ app.post("/charge", (req, res) => {
       description: "Sample Charge",
          currency: "usd",
          customer: customer.id
-    }))
-  .then(charge => res.render("charge"));
+    }));res.sendFile(path.join(__dirname, "/../Bet-Sweat/views/home.html"));
+  
 });
 
 
-// Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
 
 
 
-// module.exports = app;
-app.listen(3000, () => console.log("Server is running on"+" "+ PORT));
+app.use((req, res, next)=>{
+
+})
+
+
+
+
+
+
+
+
+
+// Errors => page not found 404
+app.use((req, res, next) =>  {
+  var err = new Error('Page not found');
+  err.status = 404;
+  next(err);
+   
+})
+
+// Handling errors (send them to the client)
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.send(err.message);
+});
+
+
+
+
+
+
+// Setting up the server
+app.listen(3000, () => {
+    console.log('Server is running on port 3000...');
+});
+
+module.exports = app;

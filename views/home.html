@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
 
-  <!-- <script src="../public/js/ajax.js"></script> -->
+  <script src="../public/js/ajax.js"></script>
 </head>
 
 <body>
@@ -21,14 +21,14 @@
     <p>Make your move!</p>
     <div class="navBar">
       <a href="./home.html">Home</a> |<a href="./login.html"> Log In</a> |<a href="./view.html"> Bet Here</a>
-      | <a href="/index">Deposit Cash</a>
+      | <a href="index.ejs">Deposit Cash</a>
     </div>
   </div>
   <div class="wrapper">
     <div class="container">
       <div class="weeklyGames">
         <h1>This week's action.</h1>
-        <button type="submit" value="submit" onclick="getdata() + weeklyGames()">Search</button>
+        <button type="submit" value="submit" onclick="getData() + weeklyGames()">Search</button>
         <h1 class="aT-Main">Away Teams: </h1>
         <br>
         <h1 class="hT-Main">Home Teams: </h1><br>
@@ -74,12 +74,12 @@
         </div>
         <div class="back">
           <div class="inner">
-            <div class="date1">Date : </div>
-            <div class="awayTeam1">Away Team : </div>
-            <div class="homeTeam1">Home Team : </div>
-            <div class="pointSpread1">Point Spread : </div>
-            <div class="overUnder1">Over Under : </div>
-            <div class="forecastDescription1">Predicted Weather : </div>
+            <div class="date2">Date : </div>
+            <div class="awayTeam2">Away Team : </div>
+            <div class="homeTeam2">Home Team : </div>
+            <div class="pointSpread2">Point Spread : </div>
+            <div class="overUnder2">Over Under : </div>
+            <div class="forecastDescription2">Predicted Weather : </div>
           </div>
         </div>
       </div>
@@ -96,12 +96,12 @@
         </div>
         <div class="back">
           <div class="inner">
-            <div class="date1">Date : </div>
-            <div class="awayTeam1">Away Team : </div>
-            <div class="homeTeam1">Home Team : </div>
-            <div class="pointSpread1">Point Spread : </div>
-            <div class="overUnder1">Over Under : </div>
-            <div class="forecastDescription1">Predicted Weather : </div>
+            <div class="date3">Date : </div>
+            <div class="awayTeam3">Away Team : </div>
+            <div class="homeTeam3">Home Team : </div>
+            <div class="pointSpread3">Point Spread : </div>
+            <div class="overUnder3">Over Under : </div>
+            <div class="forecastDescription3">Predicted Weather : </div>
           </div>
         </div>
       </div>
@@ -158,6 +158,29 @@
   </script>
 
   <style>
+    body {
+      /* background-image: url(https://images.cdn1.stockunlimited.net/preview1300/abstract-soccer-player-design_1818055.jpg); */
+      backdrop-filter: initial;
+    }
+    body::after {
+      background: url(https://news.wagertalk.com/wp-content/uploads/2019/01/new-england-patriots-background.jpg);
+      content: "";
+      opacity: 0.2;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      width: auto;
+      height: 100%;
+      background-repeat: no-repeat;
+    }
+Collapse
+
+
+
+
     .wrapper {
       margin: auto;
     }
